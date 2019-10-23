@@ -9,20 +9,20 @@ const Feed = require('feed').Feed;
 
 exports.buildFeed = function(docs) {
     const feed = new Feed({
-        title: "Fred's notes",
-        description: "Frederik Mikkelsen's personal blog",
+        title: "112 Blog",
+        description: "112madgamers personal blog",
         id: util.baseUrl,
         link: util.baseUrl,
         language: "en",
-        copyright: `Copyright Frederik Mikkelsen ${new Date().getUTCFullYear()}`,
+        copyright: `Copyright 112madgamer ${new Date().getUTCFullYear()}`,
         generator: "https://github.com/frederikam/blog",
         feedLinks: {
             atom: util.baseUrl + "atom",
             json: util.baseUrl + "json"
         },
         author: {
-            name: "Frederik Mikkelsen",
-            link: "https://frederikam.com"
+            name: "112madgamer",
+            link: ""
         }
     });
 
@@ -36,8 +36,8 @@ exports.buildFeed = function(docs) {
             date: d.date,
             author: {
                 author: d.author,
-                link: d.authorUrl !== null ? d.authorUrl : "https://frederikam.com",
-                email: "fred at frederikam dot com"
+                link: d.authorUrl !== null ? d.authorUrl : "",
+                email: ""
             }
         })
     });
